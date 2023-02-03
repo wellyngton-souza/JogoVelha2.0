@@ -1,0 +1,56 @@
+:root{
+    --back: white;
+    --fontcasa: Arial;
+    --fontcolor: black;
+}
+
+*{
+    margin: 0;
+    background-color: var(--back);
+    font-family: var(--fontcasa);
+}
+
+header{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Tabuleiro{
+    height: 60vw;
+    max-height: 60vh;
+    width: 60vw;
+    max-width: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.Tabuleiro .casa:nth-child(4),.casa:nth-child(5),.casa:nth-child(6),.casa:nth-child(7),.casa:nth-child(8),.casa:nth-child(9){
+    border-top: solid black 0.5vh;
+}
+
+.Tabuleiro .casa:nth-child(1),.casa:nth-child(2),.casa:nth-child(4),.casa:nth-child(5),.casa:nth-child(7),.casa:nth-child(8){
+    border-right: solid black 0.5vh;
+}
+
+.casa:hover{
+    background-color: rgb(230, 230, 230);
+}
+
+.casa{
+    box-sizing: border-box;
+    color: var(--fontcolor);
+    background: transparent;
+    background-color: var(--backcasa);
+    width: 33.3%;
+    height: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    font-size: 200%;
+}
