@@ -13,6 +13,18 @@ const fimJogo = (resVez) =>{
     c[2] === resVez && c[4] === resVez && c[6] === resVez ? Tabuleiro.innerHTML = `Vencedor Player ${resVez}` : console.log();
 }
 
+const jogarbot = () =>{
+    let casaaleatoria = parseInt(Math.random() * 10);
+    if(c[casaaleatoria] !== 0){
+        jogarbot();
+    } else{
+        document.querySelector(`#casa${casaaleatoria}`).innerHTML = "O";
+        c[casaaleatoria] = 2;
+        vez = 1;
+        fimJogo(2);
+    }
+}
+
 const preencherCasa = (casaselect) =>{
     let i = casaselect.id[4];
 
@@ -23,10 +35,7 @@ const preencherCasa = (casaselect) =>{
             vez = 2;
             fimJogo(1);
         } else{
-            c[i] = 2;
-            casaselect.innerHTML = "O";
-            vez = 1;
-            fimJogo(2);
+            jogarbot();
         }
     }
 }
