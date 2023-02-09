@@ -37,6 +37,21 @@ header{
     border-right: solid black 0.5vh;
 }
 
+.player1{
+    width: 50%;
+}
+
+.player2{
+    width: 50%;
+    text-align: right;
+}
+
+.Placar{
+    display: flex;
+    width: 60vw;
+    max-width: 60vh;
+}
+
 .casa:hover{
     background-color: rgb(230, 230, 230);
 }
