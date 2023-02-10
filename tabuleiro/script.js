@@ -16,20 +16,24 @@ const mostrarVencedor = (venced) =>{
 }
 
 const fimJogo = (resVez) =>{
-    if(c[0] !== 0 && c[1] !== 0 && c[2] !== 0 && c[3] !== 0 && c[4] !== 0 && c[5] !== 0 && c[6] !== 0 && c[7] !== 0 && c[8] !== 0){
+    if(c.slice().every(num => num !== 0)){
         Tabuleiro.innerHTML = `Jogo Empatado<br><button onclick="reiniciarJogo()">Reiniciar Jogo</button>`;
         Tabuleiro.style.flexDirection = "column";
     }
 
-    if(c !==0){
-        c[0] === resVez && c[1] === resVez && c[2] === resVez ? mostrarVencedor(resVez) : console.log();
-        c[3] === resVez && c[4] === resVez && c[5] === resVez ? mostrarVencedor(resVez) : console.log();
-        c[6] === resVez && c[7] === resVez && c[8] === resVez ? mostrarVencedor(resVez) : console.log();
-        c[0] === resVez && c[3] === resVez && c[6] === resVez ? mostrarVencedor(resVez) : console.log();
-        c[1] === resVez && c[4] === resVez && c[7] === resVez ? mostrarVencedor(resVez) : console.log();
-        c[2] === resVez && c[5] === resVez && c[8] === resVez ? mostrarVencedor(resVez) : console.log();
-        c[0] === resVez && c[4] === resVez && c[8] === resVez ? mostrarVencedor(resVez) : console.log();
-        c[2] === resVez && c[4] === resVez && c[6] === resVez ? mostrarVencedor(resVez) : console.log();
+    if (c !== 0) {
+        let posicoes = [
+            [c[0], c[1], c[2]],
+            [c[3], c[4], c[5]],
+            [c[6], c[7], c[8]],
+            [c[0], c[3], c[6]],
+            [c[1], c[4], c[7]],
+            [c[2], c[5], c[8]],
+            [c[0], c[4], c[8]],
+            [c[2], c[4], c[6]]
+        ];
+      
+        posicoes.find((condicao) => condicao.every((num) => num === resVez)) ? mostrarVencedor(resVez) : console.log();
     }
 }
 
